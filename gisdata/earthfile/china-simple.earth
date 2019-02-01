@@ -1,0 +1,118 @@
+<map name="Globe" type="geocentric" version = "2">
+	<!--此为全球影像图-->
+	<image name="GlobeImage" driver="gdal">
+		<url>../data/image/globe/globel.tif</url>
+	</image>
+	
+	<!--全球高程图-->
+	<heightfield name="GlobeHeightfiled" driver="gdal">
+		<url>../data/heightfield/30m.tif</url>
+	</heightfield>
+	
+	<!--局部高清纹理组合-->
+	<image name="detial-image" driver="composite">
+    <!--13L-105-115-30-35-->
+    <image name="13-1" driver="gdal">
+    	<url>../data/image/13-105-115-30-35/1.tif</url>
+    </image>
+    <image name="13-2" driver="gdal">
+    	<url>../data/image/13-105-115-30-35/2.tif</url>
+    </image>
+    <image name="13-3" driver="gdal">
+    	<url>../data/image/13-105-115-30-35/3.tif</url>
+    </image>
+    <image name="13-4" driver="gdal">
+    	<url>../data/image/13-105-115-30-35/4.tif</url>
+    </image>
+    
+    <!--17L-34-35-1085-1095-->
+    <image name="17-0" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/0.tif</url>
+    </image>
+    <image name="17-1" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/1.tif</url>
+    </image>
+    <image name="17-2" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/2.tif</url>
+    </image>
+    <image name="17-3" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/3.tif</url>
+    </image>
+    <image name="17-4" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/4.tif</url>
+    </image>
+    <image name="17-5" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/5.tif</url>
+    </image>
+    <image name="17-6" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/6.tif</url>
+    </image>
+    <image name="17-7" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/7.tif</url>
+    </image>
+    <image name="17-8" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/8.tif</url>
+    </image>
+    <image name="17-9" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/9.tif</url>
+    </image>
+    <image name="17-10" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/10.tif</url>
+    </image>
+    <image name="17-11" driver="gdal">
+    	<url>../data/image/17L-34-35-1085-1095/11.tif</url>
+    </image>    
+	</image>	
+	
+	<!--添加世界线（黄色）与国界线（白色）-->
+	<image name="world_boundaries" driver="agglite">
+		<features name="world" driver="ogr">
+			<url>../data/shpFile/world.shp</url>
+			<build_spatial_index>true</build_spatial_index>
+	  </features>		
+	  
+	  <geometry_type>line</geometry_type>
+	  
+	  <relative_line_size>true</relative_line_size>
+	  
+	  <styles>
+	  	<style type="text/css">
+	  		world{
+	  			stroke: #ffff00;
+	  			stroke-opacity: 1.0;
+	  			stroke-width: 1.5;
+	  		}
+	  	</style>
+	  </styles>
+	</image>
+	
+	<image name="china_boundaries" driver="agglite">
+		<features name="world" driver="ogr">
+			<url>../data/shpFile/china.shp</url>
+			<build_spatial_index>true</build_spatial_index>
+	  </features>		
+	  
+	  <geometry_type>line</geometry_type>
+	  
+	  <relative_line_size>true</relative_line_size>
+	  
+	  <styles>
+	  	<style type="text/css">
+	  		world{
+	  			stroke: #ffffff;
+	  			stroke-opacity: 1.0;
+	  			stroke-width: 1.0;
+	  		}
+	  	</style>
+	  </styles>
+	</image>
+		
+	<!--文件缓存-->
+	<options>
+	  <overlay_blending>false</overlay_blending>
+	  <cache_policy usage="cache_only"/>
+		<cache type="filesystem">
+		  <path>./FileCache</path>
+		</cache>
+	</options>
+</map>

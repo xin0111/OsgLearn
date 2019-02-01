@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tilemap tilemapservice="http://www.osgeo.org/services/tilemapservice.xml" version="1.0.0">
+    <title>全球1-5_TMS</title>
+    <abstract/>
+    <srs>OSGEO:41001</srs>
+    <vsrs/>
+    <boundingbox maxx="19925663.561298888176680" maxy="20037501.297051906585693" minx="-20037508.342789240181446" miny="-19972699.620750427246094"/>
+    <origin x="-20037508.3427890" y="-20037508.3427890" profile="global-mercator"/>
+    <tileformat extension="jpg" mime-type="image/jpg" height="256" width="256"/>
+    <tilesets>
+        <tileset href="" order="0" units-per-pixel="156543.0339280410"/>
+    </tilesets>
+    <tileset/>
+</tilemap>

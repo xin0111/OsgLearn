@@ -1,0 +1,18 @@
+<map name="Globe" type="geocentric" version = "2">
+	<!--此为全球影像图-->
+	<image name="GlobeImage" driver="gdal">
+		<url>../image/globel.tif</url>
+	</image>
+	<!--全球高程图-->
+	<heightfield name="GlobeHeightfiled" driver="gdal">
+		<url>../heightfield/globe_90m.tif</url>
+	</heightfield>
+	<!-- <ocean driver="triton"/> -->
+	<!--文件缓存-->
+	<options>
+		<overlay_blending>true</overlay_blending>
+		<cache type="filesystem">
+		<path>./FileCache_changping</path>
+		</cache>
+	</options>
+</map>

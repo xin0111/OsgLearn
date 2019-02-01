@@ -1,0 +1,69 @@
+<map name="Globe" type="geocentric" version = "2">
+
+	 <!--全球影像图-->
+	<image driver="tms" name="全球">
+		<url>../image/globel/tms.xml</url>
+	</image>
+    
+	<!--影像图-->
+	<image name="中国" driver="gdal">
+		<url>../image/China背景.tif</url>
+	</image>
+		
+	<!-- 高程图 -->
+	<heightfield name="高程" driver="gdal">
+		<url>../heightfield/china1000.tif</url>
+	</heightfield>
+	
+	<!-- 矢量信息 -->
+	<image name="世界边界" driver="agglite">
+		<features name="world" driver="ogr">
+			<url>../shp/world.shp</url>
+			<build_spatial_index>true</build_spatial_index>
+	  </features>			  
+	  <geometry_type>line</geometry_type>	  
+	  <relative_line_size>true</relative_line_size>	  
+	  <styles>
+	  	<style type="text/css">
+	  		world{
+	  			stroke: #ffffff;
+	  			stroke-opacity: 1.0;
+	  			stroke-width: 1.0;
+	  		}
+	  	</style>
+	  </styles>	  
+	</image>
+	
+    <model driver="feature_geom" name="省标签">
+		<features driver="ogr" url="../shp/province.json"/>
+		<styles>
+			<style type="text/css">province
+				{	
+					icon:&quot;../ShpFileStyle/placemark_province.png&quot;;
+					icon-placement:						centroid;
+					icon-scale:							1.0;					
+					icon-occlusion-cull:				false;
+					icon-occlusion-cull-altitude:		8000;
+					text-font:							simhei.ttf;
+					text-encoding:						utf-8;
+					text-content:						[NAME];
+					text-size:							20;
+					text-color:							#FFFF00;
+					altitude-offset:					100;
+					altitude-technique:					scene;
+					icon-declutter:						true;
+					altitude-clamping:					absolute;
+				}
+			</style>
+		</styles>
+	</model>
+
+	<!-- <ocean driver="triton"/> -->
+	<!--文件缓存-->
+	<options>
+		<overlay_blending>true</overlay_blending>
+		<cache type="filesystem">
+		<path>./FileCache</path>
+		</cache>
+	</options>
+</map>

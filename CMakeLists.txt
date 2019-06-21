@@ -20,7 +20,7 @@ find_package(Qt5Gui QUIET)
 find_package(Qt5Widgets QUIET) 	
 find_package(Qt5OpenGL)
 
-set(THIRDPARTY_DIR E:/projects/HYMPSDK/ModelTest/runtime)
+set(THIRDPARTY_DIR E:/projects/HYMPSDK/publish)
 
 include_directories(
 		${THIRDPARTY_DIR}/osg/include
@@ -31,9 +31,9 @@ link_directories(
 set(OSG_LIBS osg osgGA osgViewer 
 	         osgUtil osgShadow osgFX 
 			 osgDB osgUtil osgQt
-			 osgEarth osgEarthUtil OpenThreads)			
+			 osgEarth osgEarthUtil OpenThreads osgEarthAnnotation)			
 # 查找 source
-set(src_dir . Envelop3D)
+set(src_dir . Envelop3D OverlayImage)
 foreach(dir ${src_dir})
 	string(TOUPPER "${dir}" dir_u)			
 	file(GLOB ${dir_u}_UI_FILES ${dir}/*.ui)

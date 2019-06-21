@@ -7,6 +7,8 @@
 #include <QTimer>
 
 #include "ChartControler.h"
+#include "OverlayImage/xOverlayImage.h"
+#include "QEarthManager.h"
 
 int main(int argc, char*argv[])
 {
@@ -26,6 +28,11 @@ int main(int argc, char*argv[])
 	man.createEnvelop3D(100, pos, points);
 
 	ChartControler controler;	
+
+	xOverlayImage xOverlayImg(QEarthManager::instance()->getMapNode());
+	QImage img2Overlay;
+	img2Overlay.load("C:/out_cpu_GEOGCSnew.jpeg");
+	xOverlayImg.DrawCoverImage(img2Overlay, 114.2667, 32.2667, 117.2333, 35.5167, "1000");
 
 	w.show();
 	return a.exec();

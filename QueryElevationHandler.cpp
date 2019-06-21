@@ -58,7 +58,7 @@ bool QueryElevationHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIA
 			double lat = mapIntersectionPoint.y();
 			double alt = mapIntersectionPoint.z();
 
-			QString strText = QString::fromLocal8Bit("Lon:%1 Long:%2 Height(MSL):%3").arg(lon).arg(lat).arg(alt);
+			QString strText = QString::fromLocal8Bit("Lon:%1 Lat:%2 Height(MSL):%3").arg(lon).arg(lat).arg(alt);
 			m_mouseCoords->setText(strText.toStdString());
 		}
 	}

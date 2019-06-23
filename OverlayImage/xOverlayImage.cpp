@@ -31,9 +31,9 @@ void xOverlayImage::DrawCoverImage(QImage image, double dtopLeftLon,
 	overlay->setImage(osgImage);
 	overlay->setAlpha(0.6);
 	/*
-	...tl
-	......center
-	.............br
+	..tl...s.........
+	..w..center..e...
+	.......n.....br..
 	*/
 	overlay->setWest(dtopLeftLon);
 	overlay->setEast(dbtRightLon);

@@ -121,6 +121,8 @@ void ChartPicture3DManager::DelChartDisplayByID(const int&  envelopID)
 		if (chartptr->GetEquipID() == envelopID)
 		{
 			removeChatPicture(chartptr);
+			m_ChartPictures.erase(it);
+			break;
 		}
 	}
 }
